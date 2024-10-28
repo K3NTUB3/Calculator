@@ -51,13 +51,13 @@
             this.btn8 = new System.Windows.Forms.Button();
             this.btn7 = new System.Windows.Forms.Button();
             this.panel2 = new System.Windows.Forms.Panel();
+            this.ViewHistory = new Calculator.UC_History();
             this.btnNegate = new System.Windows.Forms.Button();
             this.btnPercent = new System.Windows.Forms.Button();
             this.btnSubtract = new System.Windows.Forms.Button();
             this.panel1 = new System.Windows.Forms.Panel();
             this.RB_MDAS = new System.Windows.Forms.RadioButton();
             this.RB_LtoR = new System.Windows.Forms.RadioButton();
-            this.ViewHistory = new Calculator.UC_History();
             this.panel3.SuspendLayout();
             this.panel2.SuspendLayout();
             this.panel1.SuspendLayout();
@@ -129,6 +129,7 @@
             this.btnDot.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
             this.btnDot.Cursor = System.Windows.Forms.Cursors.Hand;
             this.btnDot.FlatAppearance.BorderColor = System.Drawing.Color.Black;
+            this.btnDot.FlatAppearance.MouseDownBackColor = System.Drawing.Color.Silver;
             this.btnDot.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.btnDot.Font = new System.Drawing.Font("Microsoft Sans Serif", 14.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.btnDot.ForeColor = System.Drawing.Color.Black;
@@ -147,6 +148,7 @@
             this.btnBackSpace.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
             this.btnBackSpace.Cursor = System.Windows.Forms.Cursors.Hand;
             this.btnBackSpace.FlatAppearance.BorderColor = System.Drawing.Color.Black;
+            this.btnBackSpace.FlatAppearance.MouseDownBackColor = System.Drawing.Color.Firebrick;
             this.btnBackSpace.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.btnBackSpace.Font = new System.Drawing.Font("DigifaceWide", 15.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.btnBackSpace.ForeColor = System.Drawing.SystemColors.Control;
@@ -165,6 +167,7 @@
             this.btnDivide.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
             this.btnDivide.Cursor = System.Windows.Forms.Cursors.Hand;
             this.btnDivide.FlatAppearance.BorderColor = System.Drawing.Color.Black;
+            this.btnDivide.FlatAppearance.MouseDownBackColor = System.Drawing.Color.Blue;
             this.btnDivide.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.btnDivide.Font = new System.Drawing.Font("Microsoft Sans Serif", 14.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.btnDivide.ForeColor = System.Drawing.SystemColors.Control;
@@ -183,6 +186,7 @@
             this.btnEquals.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
             this.btnEquals.Cursor = System.Windows.Forms.Cursors.Hand;
             this.btnEquals.FlatAppearance.BorderColor = System.Drawing.Color.Black;
+            this.btnEquals.FlatAppearance.MouseDownBackColor = System.Drawing.Color.Blue;
             this.btnEquals.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.btnEquals.Font = new System.Drawing.Font("Microsoft Sans Serif", 14.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.btnEquals.ForeColor = System.Drawing.SystemColors.Control;
@@ -201,6 +205,7 @@
             this.btn0.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
             this.btn0.Cursor = System.Windows.Forms.Cursors.Hand;
             this.btn0.FlatAppearance.BorderColor = System.Drawing.Color.Black;
+            this.btn0.FlatAppearance.MouseDownBackColor = System.Drawing.Color.Silver;
             this.btn0.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.btn0.Font = new System.Drawing.Font("Microsoft Sans Serif", 14.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.btn0.ForeColor = System.Drawing.Color.Black;
@@ -219,6 +224,7 @@
             this.btnClear.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
             this.btnClear.Cursor = System.Windows.Forms.Cursors.Hand;
             this.btnClear.FlatAppearance.BorderColor = System.Drawing.Color.Black;
+            this.btnClear.FlatAppearance.MouseDownBackColor = System.Drawing.Color.Firebrick;
             this.btnClear.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.btnClear.Font = new System.Drawing.Font("Microsoft Sans Serif", 14.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.btnClear.ForeColor = System.Drawing.SystemColors.Control;
@@ -237,6 +243,7 @@
             this.btnMultiply.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
             this.btnMultiply.Cursor = System.Windows.Forms.Cursors.Hand;
             this.btnMultiply.FlatAppearance.BorderColor = System.Drawing.Color.Black;
+            this.btnMultiply.FlatAppearance.MouseDownBackColor = System.Drawing.Color.Blue;
             this.btnMultiply.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.btnMultiply.Font = new System.Drawing.Font("Microsoft Sans Serif", 20.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.btnMultiply.ForeColor = System.Drawing.SystemColors.Control;
@@ -255,6 +262,7 @@
             this.btn3.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
             this.btn3.Cursor = System.Windows.Forms.Cursors.Hand;
             this.btn3.FlatAppearance.BorderColor = System.Drawing.Color.Black;
+            this.btn3.FlatAppearance.MouseDownBackColor = System.Drawing.Color.Silver;
             this.btn3.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.btn3.Font = new System.Drawing.Font("Microsoft Sans Serif", 14.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.btn3.ForeColor = System.Drawing.Color.Black;
@@ -273,6 +281,7 @@
             this.btn2.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
             this.btn2.Cursor = System.Windows.Forms.Cursors.Hand;
             this.btn2.FlatAppearance.BorderColor = System.Drawing.Color.Black;
+            this.btn2.FlatAppearance.MouseDownBackColor = System.Drawing.Color.Silver;
             this.btn2.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.btn2.Font = new System.Drawing.Font("Microsoft Sans Serif", 14.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.btn2.ForeColor = System.Drawing.Color.Black;
@@ -291,6 +300,7 @@
             this.btn1.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
             this.btn1.Cursor = System.Windows.Forms.Cursors.Hand;
             this.btn1.FlatAppearance.BorderColor = System.Drawing.Color.Black;
+            this.btn1.FlatAppearance.MouseDownBackColor = System.Drawing.Color.Silver;
             this.btn1.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.btn1.Font = new System.Drawing.Font("Microsoft Sans Serif", 14.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.btn1.ForeColor = System.Drawing.Color.Black;
@@ -309,6 +319,7 @@
             this.btn6.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
             this.btn6.Cursor = System.Windows.Forms.Cursors.Hand;
             this.btn6.FlatAppearance.BorderColor = System.Drawing.Color.Black;
+            this.btn6.FlatAppearance.MouseDownBackColor = System.Drawing.Color.Silver;
             this.btn6.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.btn6.Font = new System.Drawing.Font("Microsoft Sans Serif", 14.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.btn6.ForeColor = System.Drawing.Color.Black;
@@ -327,6 +338,7 @@
             this.btn5.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
             this.btn5.Cursor = System.Windows.Forms.Cursors.Hand;
             this.btn5.FlatAppearance.BorderColor = System.Drawing.Color.Black;
+            this.btn5.FlatAppearance.MouseDownBackColor = System.Drawing.Color.Silver;
             this.btn5.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.btn5.Font = new System.Drawing.Font("Microsoft Sans Serif", 14.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.btn5.ForeColor = System.Drawing.Color.Black;
@@ -345,6 +357,7 @@
             this.btn4.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
             this.btn4.Cursor = System.Windows.Forms.Cursors.Hand;
             this.btn4.FlatAppearance.BorderColor = System.Drawing.Color.Black;
+            this.btn4.FlatAppearance.MouseDownBackColor = System.Drawing.Color.Silver;
             this.btn4.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.btn4.Font = new System.Drawing.Font("Microsoft Sans Serif", 14.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.btn4.ForeColor = System.Drawing.Color.Black;
@@ -363,6 +376,7 @@
             this.btnAdd.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
             this.btnAdd.Cursor = System.Windows.Forms.Cursors.Hand;
             this.btnAdd.FlatAppearance.BorderColor = System.Drawing.Color.Black;
+            this.btnAdd.FlatAppearance.MouseDownBackColor = System.Drawing.Color.Blue;
             this.btnAdd.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.btnAdd.Font = new System.Drawing.Font("Microsoft Sans Serif", 14.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.btnAdd.ForeColor = System.Drawing.SystemColors.Control;
@@ -381,6 +395,7 @@
             this.btn9.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
             this.btn9.Cursor = System.Windows.Forms.Cursors.Hand;
             this.btn9.FlatAppearance.BorderColor = System.Drawing.Color.Black;
+            this.btn9.FlatAppearance.MouseDownBackColor = System.Drawing.Color.Silver;
             this.btn9.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.btn9.Font = new System.Drawing.Font("Microsoft Sans Serif", 14.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.btn9.ForeColor = System.Drawing.Color.Black;
@@ -399,6 +414,7 @@
             this.btn8.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
             this.btn8.Cursor = System.Windows.Forms.Cursors.Hand;
             this.btn8.FlatAppearance.BorderColor = System.Drawing.Color.Black;
+            this.btn8.FlatAppearance.MouseDownBackColor = System.Drawing.Color.Silver;
             this.btn8.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.btn8.Font = new System.Drawing.Font("Microsoft Sans Serif", 14.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.btn8.ForeColor = System.Drawing.Color.Black;
@@ -417,6 +433,7 @@
             this.btn7.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
             this.btn7.Cursor = System.Windows.Forms.Cursors.Hand;
             this.btn7.FlatAppearance.BorderColor = System.Drawing.Color.Black;
+            this.btn7.FlatAppearance.MouseDownBackColor = System.Drawing.Color.Silver;
             this.btn7.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.btn7.Font = new System.Drawing.Font("Microsoft Sans Serif", 14.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.btn7.ForeColor = System.Drawing.Color.Black;
@@ -458,12 +475,21 @@
             this.panel2.Size = new System.Drawing.Size(320, 293);
             this.panel2.TabIndex = 7;
             // 
+            // ViewHistory
+            // 
+            this.ViewHistory.Location = new System.Drawing.Point(0, 0);
+            this.ViewHistory.Name = "ViewHistory";
+            this.ViewHistory.Size = new System.Drawing.Size(320, 298);
+            this.ViewHistory.TabIndex = 18;
+            this.ViewHistory.TabStop = false;
+            // 
             // btnNegate
             // 
             this.btnNegate.BackColor = System.Drawing.SystemColors.ButtonFace;
             this.btnNegate.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
             this.btnNegate.Cursor = System.Windows.Forms.Cursors.Hand;
             this.btnNegate.FlatAppearance.BorderColor = System.Drawing.Color.Black;
+            this.btnNegate.FlatAppearance.MouseDownBackColor = System.Drawing.Color.Silver;
             this.btnNegate.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.btnNegate.Font = new System.Drawing.Font("Microsoft Sans Serif", 14.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.btnNegate.ForeColor = System.Drawing.Color.Black;
@@ -482,6 +508,7 @@
             this.btnPercent.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
             this.btnPercent.Cursor = System.Windows.Forms.Cursors.Hand;
             this.btnPercent.FlatAppearance.BorderColor = System.Drawing.Color.Black;
+            this.btnPercent.FlatAppearance.MouseDownBackColor = System.Drawing.Color.Blue;
             this.btnPercent.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.btnPercent.Font = new System.Drawing.Font("Microsoft Sans Serif", 14.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.btnPercent.ForeColor = System.Drawing.SystemColors.Control;
@@ -500,6 +527,7 @@
             this.btnSubtract.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
             this.btnSubtract.Cursor = System.Windows.Forms.Cursors.Hand;
             this.btnSubtract.FlatAppearance.BorderColor = System.Drawing.Color.Black;
+            this.btnSubtract.FlatAppearance.MouseDownBackColor = System.Drawing.Color.Blue;
             this.btnSubtract.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.btnSubtract.Font = new System.Drawing.Font("Microsoft Sans Serif", 20.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.btnSubtract.ForeColor = System.Drawing.SystemColors.Control;
@@ -530,10 +558,10 @@
             this.RB_MDAS.AutoSize = true;
             this.RB_MDAS.Checked = true;
             this.RB_MDAS.Font = new System.Drawing.Font("Arial Rounded MT Bold", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.RB_MDAS.Location = new System.Drawing.Point(196, 16);
+            this.RB_MDAS.Location = new System.Drawing.Point(209, 16);
             this.RB_MDAS.Name = "RB_MDAS";
             this.RB_MDAS.Size = new System.Drawing.Size(90, 18);
-            this.RB_MDAS.TabIndex = 21;
+            this.RB_MDAS.TabIndex = 0;
             this.RB_MDAS.TabStop = true;
             this.RB_MDAS.Text = "MDAS Rule";
             this.RB_MDAS.UseVisualStyleBackColor = true;
@@ -544,21 +572,13 @@
             this.RB_LtoR.AutoSize = true;
             this.RB_LtoR.FlatStyle = System.Windows.Forms.FlatStyle.System;
             this.RB_LtoR.Font = new System.Drawing.Font("Arial Rounded MT Bold", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.RB_LtoR.Location = new System.Drawing.Point(63, 16);
+            this.RB_LtoR.Location = new System.Drawing.Point(40, 16);
             this.RB_LtoR.Name = "RB_LtoR";
-            this.RB_LtoR.Size = new System.Drawing.Size(121, 19);
-            this.RB_LtoR.TabIndex = 20;
-            this.RB_LtoR.Text = "Sequential Rule";
+            this.RB_LtoR.Size = new System.Drawing.Size(159, 19);
+            this.RB_LtoR.TabIndex = 0;
+            this.RB_LtoR.Text = "Sequential Calculation";
             this.RB_LtoR.UseVisualStyleBackColor = true;
             this.RB_LtoR.Click += new System.EventHandler(this.LeftAssociative_Click);
-            // 
-            // ViewHistory
-            // 
-            this.ViewHistory.Location = new System.Drawing.Point(0, 279);
-            this.ViewHistory.Name = "ViewHistory";
-            this.ViewHistory.Size = new System.Drawing.Size(320, 19);
-            this.ViewHistory.TabIndex = 18;
-            this.ViewHistory.TabStop = false;
             // 
             // CalcMain
             // 

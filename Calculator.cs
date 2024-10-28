@@ -12,7 +12,6 @@ namespace Calculator
         private bool equalsClicked = false;
         private bool zeroHandled = false;
         private bool taskPerformed = false;
-        private bool percentClicked = false;
         private double result;
         private double parsedValue;
         public CalcMain()
@@ -39,7 +38,7 @@ namespace Calculator
                     _ = Task.Run(async () =>
                     {
                         await Task.Delay(100); // Short delay
-                        clearButton.Invoke((Action)(() => clearButton.BackColor = Color.IndianRed)); // Reset color on UI thread
+                        clearButton.Invoke((Action)(() => clearButton.BackColor = Color.IndianRed));
                     });
                 }
 
@@ -56,12 +55,12 @@ namespace Calculator
 
                 if (numberButton != null)
                 {
-                    numberButton.BackColor = Color.LightGray;
+                    numberButton.BackColor = Color.Silver;
                     NumberDecimalValue_Click(numberButton, e);
                     _ = Task.Run(async () =>
                     {
                         await Task.Delay(100); // Short delay
-                        numberButton.Invoke((Action)(() => numberButton.BackColor = SystemColors.Control));
+                        numberButton.Invoke((Action)(() => numberButton.BackColor = SystemColors.ButtonFace));
                     });
                 }
             }
@@ -98,7 +97,6 @@ namespace Calculator
                     });
                 }
             }
-
             else if (string.Equals(e.KeyChar, '.')) //allow decimal point (.)
             {
                 Button decimalButton = btnDot;
@@ -110,7 +108,7 @@ namespace Calculator
                 _ = Task.Run(async () =>
                 {
                     await Task.Delay(100); // Short delay
-                    decimalButton.Invoke((Action)(() => decimalButton.BackColor = SystemColors.Control)); // Reset color on UI thread
+                    decimalButton.Invoke((Action)(() => decimalButton.BackColor = SystemColors.Control));
                 });
             }
             else if (string.Equals(e.KeyChar, '%'))
@@ -263,10 +261,6 @@ namespace Calculator
         private void OperatorValue_Click(object sender, EventArgs e)
         {
             Button operation = (Button)sender; //handles the inputs +, -, /, *
-            if (string.Equals(operation.Text, "x"))
-            {
-                operation.Text = "*";
-            }
             if (operate.DivisionError(txtValue.Text))
             {
                 ReturnToDefault();
@@ -290,12 +284,20 @@ namespace Calculator
             }
             if (double.TryParse(txtValue.Text, out parsedValue))
             {
-                txtEquation.Text += " " + parsedValue.ToString("#,0.#######") + " " + operation.Text;
+                if (RB_MDAS.Checked)
+                {
+                    txtEquation.Text += " " + parsedValue.ToString("#,0.#######") + " " + operation.Text;
+                }
+                if (RB_LtoR.Checked)
+                {
+                    txtEquation.Text += " " + parsedValue.ToString("#,0.#######");
+                    result = operate.LeftAssociativity(operate.CleanEquation(txtEquation.Text));
+                    txtEquation.Text = result.ToString("#,0.#######") + " " + operation.Text;
+                }
             }
             zeroHandled = false;
             operatorClicked = true;
             taskPerformed = false;
-            percentClicked = false;
         }           //Accepts operators (+, -, /, and *)
         private void Percent_Click(object sender, EventArgs e)
         {
@@ -303,10 +305,7 @@ namespace Calculator
             {
                 operatorClicked = false;
             }
-            if (percentClicked)
-            {
-                return;
-            }
+            
             if (equalsClicked) //checks if equals is clicked
             {
                 txtEquation.Clear();
@@ -314,7 +313,6 @@ namespace Calculator
             }
             double percent = double.Parse(txtValue.Text) / 100;
             txtValue.Text = percent.ToString("#,0.#######");
-            percentClicked = true;
         }                 //Convert current number into percentage value
         private void Equals_Click(object sender, EventArgs e)
         {
@@ -329,7 +327,6 @@ namespace Calculator
                     txtValue.Text = txtValue.Text.Replace(".", "");
                     return;
                 }
-                double parsedValue;
                 if (double.TryParse(txtValue.Text, out parsedValue))
                 {
                     // Append the formatted value with equals sign to txtEquation
@@ -357,7 +354,6 @@ namespace Calculator
             else
             {
                 operatorClicked = false;
-                percentClicked = false;
                 taskPerformed = true;
                 txtValue.Text = result.ToString("#,0.##");
                 operate.AddToHistory(txtEquation.Text); //adds the equation to the history
@@ -443,7 +439,6 @@ namespace Calculator
             equalsClicked = false;
             zeroHandled = false;
             taskPerformed = false;
-            percentClicked = false;
         }                                         //Function to reverts everything back to original state
     }
 }

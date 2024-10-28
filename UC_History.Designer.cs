@@ -37,7 +37,7 @@
             // 
             // txtHistory
             // 
-            this.txtHistory.BackColor = System.Drawing.SystemColors.ActiveCaption;
+            this.txtHistory.BackColor = System.Drawing.Color.Snow;
             this.txtHistory.Cursor = System.Windows.Forms.Cursors.Arrow;
             this.txtHistory.Dock = System.Windows.Forms.DockStyle.Fill;
             this.txtHistory.Font = new System.Drawing.Font("Segoe UI Semibold", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
