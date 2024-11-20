@@ -118,6 +118,16 @@
     <value>System.Resources.ResXResourceWriter, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
   </resheader>
   <assembly alias="System.Drawing" name="System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a" />
+  <data name="Audio.Image" type="System.Drawing.Bitmap, System.Drawing" mimetype="application/x-microsoft.net.object.bytearray.base64">
+    <value>
+        iVBORw0KGgoAAAANSUhEUgAAABAAAAAQCAYAAAAf8/9hAAAABGdBTUEAALGPC/xhBQAAAPhJREFUOE/N
+        0rFqAkEUheGrEjCFGhEbEZLOVotopwTjG2htYZMH8AnyEGJpbW9jo+kESSBgZSsBQZs0EUSI/53ZRV2z
+        olU88LH3zAwj6spVJ4RXOx4ki5gd/ZPEAL+m7RLEDGPoB/yZAub4wf4FcedZga43TCP36GPo2OANesC9
+        4BErlEwT6eDDjiJV6EH3ghZu4K5rwvhEzzSRMnQvpaXmFG+86y9Y2lES0L0nLZdc8G1HuYPuPWs55yvc
+        YoKuaSJF6F5ayzk/Yh4LPJgm0sa7HY+jh7/g/RujzjODNeqm+cTvRQpgihH0pToZfdOadjxIDhE7/n9E
+        tn3YPECl5CNXAAAAAElFTkSuQmCC
+</value>
+  </data>
   <data name="btnHistory.Image" type="System.Drawing.Bitmap, System.Drawing" mimetype="application/x-microsoft.net.object.bytearray.base64">
     <value>
         iVBORw0KGgoAAAANSUhEUgAAABAAAAAQCAYAAAAf8/9hAAAABGdBTUEAALGPC/xhBQAAASVJREFUOE+1

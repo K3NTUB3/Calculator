@@ -56,6 +56,7 @@
             this.btnPercent = new System.Windows.Forms.Button();
             this.btnSubtract = new System.Windows.Forms.Button();
             this.panel1 = new System.Windows.Forms.Panel();
+            this.Audio = new System.Windows.Forms.CheckBox();
             this.RB_MDAS = new System.Windows.Forms.RadioButton();
             this.RB_LtoR = new System.Windows.Forms.RadioButton();
             this.panel3.SuspendLayout();
@@ -83,11 +84,12 @@
             // 
             this.panel3.BackColor = System.Drawing.Color.White;
             this.panel3.BorderStyle = System.Windows.Forms.BorderStyle.Fixed3D;
+            this.panel3.Controls.Add(this.Audio);
             this.panel3.Controls.Add(this.btnHistory);
             this.panel3.Controls.Add(this.txtValue);
             this.panel3.Controls.Add(this.txtEquation);
             this.panel3.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(75)))), ((int)(((byte)(60)))), ((int)(((byte)(48)))));
-            this.panel3.Location = new System.Drawing.Point(12, 44);
+            this.panel3.Location = new System.Drawing.Point(12, 24);
             this.panel3.Name = "panel3";
             this.panel3.Size = new System.Drawing.Size(320, 97);
             this.panel3.TabIndex = 19;
@@ -553,12 +555,29 @@
             this.panel1.Size = new System.Drawing.Size(343, 455);
             this.panel1.TabIndex = 6;
             // 
+            // Audio
+            // 
+            this.Audio.Appearance = System.Windows.Forms.Appearance.Button;
+            this.Audio.Cursor = System.Windows.Forms.Cursors.Hand;
+            this.Audio.Enabled = false;
+            this.Audio.FlatAppearance.BorderSize = 0;
+            this.Audio.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.Audio.Image = ((System.Drawing.Image)(resources.GetObject("Audio.Image")));
+            this.Audio.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
+            this.Audio.Location = new System.Drawing.Point(0, 70);
+            this.Audio.Name = "Audio";
+            this.Audio.Size = new System.Drawing.Size(24, 24);
+            this.Audio.TabIndex = 20;
+            this.Audio.UseVisualStyleBackColor = true;
+            this.Audio.Visible = false;
+            // 
             // RB_MDAS
             // 
             this.RB_MDAS.AutoSize = true;
             this.RB_MDAS.Checked = true;
+            this.RB_MDAS.Cursor = System.Windows.Forms.Cursors.Hand;
             this.RB_MDAS.Font = new System.Drawing.Font("Arial Rounded MT Bold", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.RB_MDAS.Location = new System.Drawing.Point(209, 16);
+            this.RB_MDAS.Location = new System.Drawing.Point(205, 126);
             this.RB_MDAS.Name = "RB_MDAS";
             this.RB_MDAS.Size = new System.Drawing.Size(90, 18);
             this.RB_MDAS.TabIndex = 0;
@@ -570,9 +589,10 @@
             // RB_LtoR
             // 
             this.RB_LtoR.AutoSize = true;
+            this.RB_LtoR.Cursor = System.Windows.Forms.Cursors.Hand;
             this.RB_LtoR.FlatStyle = System.Windows.Forms.FlatStyle.System;
             this.RB_LtoR.Font = new System.Drawing.Font("Arial Rounded MT Bold", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.RB_LtoR.Location = new System.Drawing.Point(40, 16);
+            this.RB_LtoR.Location = new System.Drawing.Point(44, 126);
             this.RB_LtoR.Name = "RB_LtoR";
             this.RB_LtoR.Size = new System.Drawing.Size(159, 19);
             this.RB_LtoR.TabIndex = 0;
@@ -633,6 +653,7 @@
         private System.Windows.Forms.Label txtValue;
         private System.Windows.Forms.Button btnPercent;
         private System.Windows.Forms.Button btnNegate;
+        private System.Windows.Forms.CheckBox Audio;
     }
 }
 

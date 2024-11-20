@@ -1,11 +1,14 @@
 ﻿using System;
 using System.Collections.Generic;
 using System.Data;
+using System.IO;
 using System.Linq;
+using System.Media;
 using System.Security.Policy;
 using System.Text;
 using System.Text.RegularExpressions;
 using System.Threading.Tasks;
+using System.Windows.Forms;
 
 namespace Calculator
 {
@@ -101,5 +104,30 @@ namespace Calculator
                 return false;
             }
         }
+        public void PlayAudio(bool isChecked)
+        {
+            if (isChecked)
+            {
+                try
+                {
+                    // Relative path to the audio file in the output directory
+                    string audioPath = Path.Combine(AppDomain.CurrentDomain.BaseDirectory, "click-button-140881.wav");
+
+                    using (SoundPlayer player = new SoundPlayer(audioPath))
+                    {
+                        player.Play();
+                    }
+                }
+                catch (Exception ex)
+                {
+                    MessageBox.Show("Error playing audio: " + ex.Message);
+                }
+            }
+            else
+            {
+                return;
+            }
+        }
+
     }
 }

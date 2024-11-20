@@ -1,6 +1,8 @@
 ﻿using System;
 using System.Drawing;
+using System.IO;
 using System.Linq;
+using System.Media;
 using System.Threading.Tasks;
 using System.Windows.Forms;
 namespace Calculator
@@ -39,12 +41,22 @@ namespace Calculator
                     {
                         await Task.Delay(100); // Short delay
                         clearButton.Invoke((Action)(() => clearButton.BackColor = Color.IndianRed));
+                        operate.PlayAudio(Audio.Checked);
                     });
                 }
 
                 e.SuppressKeyPress = true; // Suppress the key press event
             }
-
+            if (e.KeyCode == Keys.M && e.Shift)
+            {
+                if (Audio == null) 
+                {
+                    return;
+                }
+                Audio.Checked = !Audio.Checked;
+                Audio.Visible = !Audio.Visible;
+                e.SuppressKeyPress = true;
+            }
         }         //Combined keypress
         private void Calculator_KeyPressed(object sender, KeyPressEventArgs e)
         {
@@ -61,6 +73,7 @@ namespace Calculator
                     {
                         await Task.Delay(100); // Short delay
                         numberButton.Invoke((Action)(() => numberButton.BackColor = SystemColors.ButtonFace));
+                        operate.PlayAudio(Audio.Checked);
                     });
                 }
             }
@@ -94,6 +107,7 @@ namespace Calculator
                     {
                         await Task.Delay(100); // Short delay
                         operatorButton.Invoke((Action)(() => operatorButton.BackColor = SystemColors.Highlight));
+                        operate.PlayAudio(Audio.Checked);
                     });
                 }
             }
@@ -109,6 +123,7 @@ namespace Calculator
                 {
                     await Task.Delay(100); // Short delay
                     decimalButton.Invoke((Action)(() => decimalButton.BackColor = SystemColors.Control));
+                    operate.PlayAudio(Audio.Checked);
                 });
             }
             else if (string.Equals(e.KeyChar, '%'))
@@ -125,6 +140,7 @@ namespace Calculator
                     {
                         await Task.Delay(100); // Short delay
                         percentButton.Invoke((Action)(() => percentButton.BackColor = SystemColors.Highlight));
+                        operate.PlayAudio(Audio.Checked);
                     });
                 }
             }
@@ -142,6 +158,7 @@ namespace Calculator
                     {
                         await Task.Delay(100); // Short delay
                         negateButton.Invoke((Action)(() => negateButton.BackColor = SystemColors.Control));
+                        operate.PlayAudio(Audio.Checked);
                     });
                 }
             }
@@ -159,6 +176,7 @@ namespace Calculator
                     {
                         await Task.Delay(100); // Short delay
                         equalsButton.Invoke((Action)(() => equalsButton.BackColor = SystemColors.Highlight));
+                        operate.PlayAudio(Audio.Checked);
                     });
                 }
             }
@@ -176,6 +194,7 @@ namespace Calculator
                     {
                         await Task.Delay(100); // Short delay
                         backSpaceButton.Invoke((Action)(() => backSpaceButton.BackColor = Color.IndianRed));
+                        operate.PlayAudio(Audio.Checked);
                     });
                 }
             }
@@ -193,6 +212,7 @@ namespace Calculator
                     {
                         await Task.Delay(100); // Short delay
                         historyButton.Invoke((Action)(() => historyButton.BackColor = Color.Transparent));
+                        operate.PlayAudio(Audio.Checked);
                     });
                 }
             }
@@ -203,6 +223,7 @@ namespace Calculator
         } //Single keypress
         private void NumberDecimalValue_Click(object sender, EventArgs e)
         {
+            operate.PlayAudio(Audio.Checked);
             Button numberdecimal = (Button)sender; //handle the numbers 0-9.
             if (operate.DivisionError(txtValue.Text) || equalsClicked)
             {
@@ -260,6 +281,7 @@ namespace Calculator
         }      //Accepts value 0-9 and decimal point
         private void OperatorValue_Click(object sender, EventArgs e)
         {
+            operate.PlayAudio(Audio.Checked);
             Button operation = (Button)sender; //handles the inputs +, -, /, *
             if (operate.DivisionError(txtValue.Text))
             {
@@ -286,13 +308,13 @@ namespace Calculator
             {
                 if (RB_MDAS.Checked)
                 {
-                    txtEquation.Text += " " + parsedValue.ToString("#,0.#######") + " " + operation.Text;
+                    txtEquation.Text += " " + parsedValue.ToString("#,0.##") + " " + operation.Text;
                 }
                 if (RB_LtoR.Checked)
                 {
-                    txtEquation.Text += " " + parsedValue.ToString("#,0.#######");
+                    txtEquation.Text += " " + parsedValue.ToString("#,0.##");
                     result = operate.LeftAssociativity(operate.CleanEquation(txtEquation.Text));
-                    txtEquation.Text = result.ToString("#,0.#######") + " " + operation.Text;
+                    txtEquation.Text = result.ToString("#,0.##") + " " + operation.Text;
                 }
             }
             zeroHandled = false;
@@ -301,6 +323,7 @@ namespace Calculator
         }           //Accepts operators (+, -, /, and *)
         private void Percent_Click(object sender, EventArgs e)
         {
+            operate.PlayAudio(Audio.Checked);
             if (operatorClicked)
             {
                 operatorClicked = false;
@@ -312,10 +335,11 @@ namespace Calculator
                 equalsClicked = false;
             }
             double percent = double.Parse(txtValue.Text) / 100;
-            txtValue.Text = percent.ToString("#,0.#######");
+            txtValue.Text = percent.ToString("#,0.####");
         }                 //Convert current number into percentage value
         private void Equals_Click(object sender, EventArgs e)
         {
+            operate.PlayAudio(Audio.Checked);
             if (taskPerformed) //checks if the equals is performed once or value is only "-"
             {
                 return;
@@ -325,7 +349,6 @@ namespace Calculator
                 if (txtValue.Text.EndsWith("."))
                 {
                     txtValue.Text = txtValue.Text.Replace(".", "");
-                    return;
                 }
                 if (double.TryParse(txtValue.Text, out parsedValue))
                 {
@@ -393,11 +416,13 @@ namespace Calculator
         }                    //MDAS Calculation for RadioButton
         private void History_Click(object sender, EventArgs e)
         {
+            operate.PlayAudio(Audio.Checked);
             ViewHistory.Visible = !ViewHistory.Visible;
             ViewHistory.SetHistory(operate);
         }                 //Shows the history UserControl
         private void BackSpace_Click(object sender, EventArgs e)
         {
+            operate.PlayAudio(Audio.Checked);
             if (operate.DivisionError(txtValue.Text))
             {
                 ReturnToDefault();
@@ -418,17 +443,19 @@ namespace Calculator
         }               //Removes single character at a time
         private void Clear_Click(object sender, EventArgs e)
         {
+            operate.PlayAudio(Audio.Checked);
             ReturnToDefault();
         }                   //Clear all and revert to orinal state
         private void NegateValue_Click(object sender, EventArgs e)
         {
+            operate.PlayAudio(Audio.Checked);
             if (string.Equals(txtValue.Text, "0")) 
             {
                 return;
             }
             else
             {
-                txtValue.Text = operate.NegateValue(double.Parse(txtValue.Text)).ToString("#,0.#######");
+                txtValue.Text = operate.NegateValue(double.Parse(txtValue.Text)).ToString("#,0.##");
             }
         }             //Changes the txtValue to negative or revert back to positive
         private void ReturnToDefault()
